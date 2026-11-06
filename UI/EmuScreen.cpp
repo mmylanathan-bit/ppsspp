@@ -1579,12 +1579,8 @@ bool EmuScreen::checkPowerDown() {
 }
 
 void EmuScreen::leaveGame() {
-	// Switch screens even when exiting, so the game gets shut down the usual way.
-	screenManager()->switchScreen(new MainScreen());
-	if (g_Config.bPauseMenuExitsEmulator) {
-		INFO_LOG(Log::System, "Game ended, exiting (--pause-menu-exit)");
-		System_ExitApp();
-	}
+	INFO_LOG(Log::System, "Game ended, exiting standalone app");
+	System_ExitApp();
 }
 
 ScreenRenderRole EmuScreen::renderRole(bool isTop) const {
