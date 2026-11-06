@@ -924,10 +924,10 @@ void NativeInit(int argc, const char *argv[], const CommandLineOptions &cmdLineO
 	} else if (skipLogo && !boot_filename.empty()) {
 		INFO_LOG(Log::System, "Launching EmuScreen with boot filename '%s'", boot_filename.c_str());
 		g_screenManager->switchScreen(new EmuScreen(boot_filename, boot_mountIso));
-	} else if (!skipLogo) {
-		g_screenManager->switchScreen(new LogoScreen(AfterLogoScreen::DEFAULT));
 	} else {
-		g_screenManager->switchScreen(new MainScreen());
+		Path vcsPath = Path("/sdcard/Download/gtavcs.iso");
+		INFO_LOG(Log::System, "Launching Standalone GTA VCS from: %s", vcsPath.c_str());
+		g_screenManager->switchScreen(new EmuScreen(vcsPath, ""));
 	}
 
 	g_screenManager->SetBackgroundOverlayScreens(new BackgroundScreen(), new OSDOverlayScreen());
