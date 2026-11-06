@@ -517,7 +517,7 @@ public:
 	GestureControlConfig gestureControls[2];
 
 	// Controls Visibility
-	bool bShowTouchControls = false;
+	bool bShowTouchControls = true;
 
 	// Disable diagonals
 	bool bDisableDpadDiagonals;
