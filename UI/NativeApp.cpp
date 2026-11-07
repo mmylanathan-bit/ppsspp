@@ -927,7 +927,7 @@ void NativeInit(int argc, const char *argv[], const CommandLineOptions &cmdLineO
 	} else {
 		Path vcsPath = Path("/sdcard/Download/gtavcs.iso");
 		INFO_LOG(Log::System, "Launching Standalone GTA VCS from: %s", vcsPath.c_str());
-		g_screenManager->switchScreen(new EmuScreen(vcsPath, ""));
+		g_screenManager->switchScreen(new EmuScreen(vcsPath, Path("")));
 	}
 
 	g_screenManager->SetBackgroundOverlayScreens(new BackgroundScreen(), new OSDOverlayScreen());
